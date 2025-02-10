@@ -1,0 +1,15 @@
+{% extends "invApp/layout.html" %}
+
+{% block title %} Logout {% endblock %}
+
+{% block content %}
+
+<h2>Logout</h2>
+<p>Are you sure you want to log out?</p>
+<form action="{% url 'logout' %}" method="post">
+    {% csrf_token %}
+    <button type="submit">Logout</button>
+    <a href="{% url 'home' %}">Cancel</a>
+</form>
+
+{% endblock content %}
